@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zufällige Strichzeichnungen</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Zufällige Strichzeichnungen</h1>
+    <div class="controls">
+      <label for="softness">Weichheit:</label>
+      <input type="range" id="softness" name="softness" min="0" max="100" value="30">
+      <button id="reloadButton">Neu laden</button>
+    </div>
+    <div class="drawing-container">
+      <div>
+        <h2>Canvas</h2>
+        <canvas id="myCanvas" width="250" height="250"></canvas>
+        <pre id="canvasCode"></pre>
+      </div>
+      <div>
+        <h2>SVG</h2>
+        <svg id="mySVG" width="250" height="250"></svg>
+        <pre id="svgCode"></pre>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
