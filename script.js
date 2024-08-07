@@ -3,6 +3,7 @@ const ctx = canvas.getContext('2d');
 const svg = document.getElementById('mySVG');
 const softnessInput = document.getElementById('softness');
 const reloadButton = document.getElementById('reloadButton');
+const exampleButton = document.getElementById('exampleButton');
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -46,7 +47,7 @@ function drawRandomStarsCanvas(count, softness) {
 }
 
 drawRandomStarsCanvas(${count}, ${softness});
-  `;
+`;
 
   for (let i = 0; i < count; i++) {
     points.push({ x: getRandomInt(canvas.width), y: getRandomInt(canvas.height) });
@@ -109,14 +110,14 @@ function drawRandomStarsSVG(count, softness) {
       line.setAttribute('stroke-width', 1);
       svg.appendChild(line);
       svgCode += `
-  <line x1="${points[i].x}" y1="${points[i].y}" x2="${points[i + 1].x}" y2="${points[i + 1].y}" stroke="black" stroke-width="1" />
+  <line x1="${points[i].x}" y1="${points[i].y}" x2="${points[i + 1]}.x}" y2="${points[i + 1]}.y}" stroke="black" stroke-width="1" />
 `;
     }
   }
 
   svgCode += `
 </svg>
-  `;
+`;
   document.getElementById('svgCode').textContent = svgCode;
 }
 
@@ -128,5 +129,6 @@ function updateDrawings() {
 
 softnessInput.addEventListener('input', updateDrawings);
 reloadButton.addEventListener('click', updateDrawings);
+exampleButton.addEventListener('click', () => window.location.href = 'example.html');
 
 updateDrawings();
